@@ -16,19 +16,23 @@ const typeDefs = gql`
     noteBody: String
   }
 
+  type Category {
+    categoryId: ID!
+    catgory: String
+    date: String
+    notes: [Note]
+  }
+
   type Auth {
     token: ID!
     user: User
   }
 
-// update to match node models 
-
-//   input BookInput {
-title: String!
-//     description: String!
-//     noteId: String!
-//     title: String!
-//   }
+  input NoteInput {
+    title: String!
+    noteBody: String!
+    noteId: String!
+  }
 
   type Query {
     me: User
