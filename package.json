@@ -21,7 +21,8 @@
   "homepage": "https://github.com/psong1/tech-freeze#readme",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@apollo/server": "^4.7.1"
+    "@apollo/server": "^4.7.1",
+    "@react-oauth/google": "^0.11.0"
   },
   "devDependencies": {
     "concurrently": "^8.1.0"
