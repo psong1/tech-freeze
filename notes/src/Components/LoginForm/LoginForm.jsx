@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./LoginForm.css";
 import Card from "../Card/Card";
 import { database } from "../utils/database";
+import {TechfreezeLoginForm} from "./LoginForm";
 
 
 
@@ -60,7 +61,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
   return (
     <Card>
       <h1 className="title">Sign In</h1>
-      <img className="logo" src="Tech-freeze-logo.png" alt="blue lettering"/>
+    
       <p className="subtitle">
         Please log in using your username and password!
       </p>
