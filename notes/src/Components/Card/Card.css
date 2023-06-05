@@ -1,0 +1,52 @@
+
+
+
+.card {
+     position: relative;
+     width: 450px;
+     height: 600px;
+     background-color: black;
+     padding-right: 5%;
+     padding-left: 5%;
+     padding-top: 2px;
+     border-radius: 5% ;
+     margin-left: 390px;
+     margin-top: 150px;
+     
+    
+  }
+
+  .apple {
+    color: #4e65f7;
+    display: inline;
+   
+    
+  
+   }
+
+  .google {
+    color: #4e65f7;
+    display: inline;
+    margin-left: 50px;
+  }
+
+  .icon {
+    margin-left: 160px;
+   
+  }
+  
+
+  
+  @media only screen and (max-width: 1300px) {
+    .card {
+      width: 50vw;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media only screen and (max-height: 670px) {
+    .card {
+      height: 650px;
+    }
+  }
