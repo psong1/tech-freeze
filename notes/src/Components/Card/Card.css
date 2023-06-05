@@ -3,15 +3,15 @@
 
 .card {
      position: relative;
-     width: 600px;
-     height: 700px;
+     width: 450px;
+     height: 600px;
      background-color: black;
      padding-right: 5%;
      padding-left: 5%;
-     padding-top: 5%;
+     padding-top: 2px;
      border-radius: 5% ;
-     margin-left: 350px;
-     margin-top: 200px;
+     margin-left: 390px;
+     margin-top: 150px;
      
     
   }
@@ -19,6 +19,8 @@
   .apple {
     color: #4e65f7;
     display: inline;
+   
+    
   
    }
 
@@ -29,14 +31,15 @@
   }
 
   .icon {
-    margin-left: 260px;
+    margin-left: 160px;
+   
   }
   
 
   
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 1300px) {
     .card {
-      width: 90vw;
+      width: 50vw;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
