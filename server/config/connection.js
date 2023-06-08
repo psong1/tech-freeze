@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/tech-freeze"
+  `mongodb+srv://carlthorne:${process.env.DB_PW}@cluster0.cpmblyl.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
 );
 
 module.exports = mongoose.connection;

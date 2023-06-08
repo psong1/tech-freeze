@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import "./LoginForm.css";
 import Card from "../Card/Card";
 import { database } from "../utils/database";
-import {TechfreezeLoginForm} from "./LoginForm";
-
-
+import { TechfreezeLoginForm } from "./LoginForm";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
 const LoginForm = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessages, setErrorMessages] = useState({});
+
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const errors = {
     username: "Invalid username",
@@ -61,7 +63,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
   return (
     <Card>
       <h1 className="title">Sign In</h1>
-    
+
       <p className="subtitle">
         Please log in using your username and password!
       </p>
@@ -91,7 +93,6 @@ const LoginForm = ({ setIsLoggedIn }) => {
           Forgot Password?
         </a>
       </div>
-
     </Card>
   );
 };
