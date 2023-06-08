@@ -11,6 +11,8 @@
     border: 1px solid #000;
     overflow: hidden;
     transition: 0.3s linear;
+    margin-top: 17%;
+    border-radius: 1%;
 }
 
 .login-signup-container.active{
@@ -25,8 +27,8 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://st4.depositphotos.com/1106005/38309/i/450/depositphotos_383099294-stock-photo-sticky-note-background-multi-color.jpg");
+    background: linear-gradient(rgba(203, 202, 202, 0.5), rgba(56, 55, 55, 0.5)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7G-O0b_jFnKCWhMOSY7QlxmwEwwvfxXm5aQ&usqp=CAU");
     background-size: cover;
     background-position: center;
     justify-content: center;
@@ -40,6 +42,7 @@
     cursor: pointer;
     font-size: 0.99rem;
     transition: 0.2s linear;
+   
 }
 
 .login-signup-container .side-div button:hover{
