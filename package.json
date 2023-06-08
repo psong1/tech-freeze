@@ -22,7 +22,8 @@
   "dependencies": {
     "apollo-server-express": "^3.11.1",
     "express": "^4.17.2",
-    "graphql": "^15.8.0"
+    "graphql": "^15.8.0",
+    "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
     "concurrently": "^8.1.0"

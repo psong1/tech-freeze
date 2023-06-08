@@ -16,6 +16,7 @@
     color: #000;
     font-weight: bold;
     padding: 15px 0;
+    font-family: initial;
 }
 
 .login form {
