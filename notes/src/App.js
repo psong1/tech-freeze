@@ -9,6 +9,8 @@ import { setContext } from "@apollo/client/link/context";
 import "./App.css";
 import LoginSignupContainer from "./Components/LoginSignupContainer/LoginSignupContainer";
 import logo from "./images/logo.png";
+import Main from "../src/Components/main/Main";
+import Sidebar from "../src/Components/sidebar/Sidebar";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -36,6 +38,8 @@ const App = () => {
         <LoginSignupContainer />
         <img src={logo} alt="" />
         <img src={require("./images/logo.png")} alt="" />
+        <Sidebar/>
+        <Main/>
       </div>
     </ApolloProvider>
   );
