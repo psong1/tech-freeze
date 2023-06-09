@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect(process.env.MONGODB_URI || "mongod://localhost/tech-freeze", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  `mongodb+srv://carlthorne:${process.env.DB_PW}@cluster0.cpmblyl.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+);
 
-module.exports = mongoose.connections;
+module.exports = mongoose.connection;
