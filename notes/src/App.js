@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,42 +7,38 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import "./App.css";
+import LoginSignupContainer from "./Components/LoginSignupContainer/LoginSignupContainer";
+import logo from "./images/logo.png";
+
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 const App = () => {
-  const httpLink = createHttpLink({
-    uri: "/graphql",
-  });
-
-  const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem("id_token");
-    return {
-      headers: {
-        ...headers,
-        authorization: token ? `Bearer ${token}` : "",
-      },
-    };
-  });
-
-  const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
-  });
-
-  // function App() {
-  //   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  //   return (
-  //     <>
-  //       {isLoggedIn ? (
-  //         <LoggedIn setIsLoggedIn={setIsLoggedIn} />
-  //       ) : (
-  //         <LoginForm setIsLoggedIn={setIsLoggedIn} />
-  //       )}
-
-  //       <img classname="logo" src={require("./images/logo.png")} alt="" />
-  //     </>
-  //   );
-  // }
+  return (
+    <ApolloProvider client={client}>
+      <div className="App">
+        <LoginSignupContainer />
+        <img src={logo} alt="" />
+        <img src={require("./images/logo.png")} alt="" />
+      </div>
+    </ApolloProvider>
+  );
 };
 
 export default App;
