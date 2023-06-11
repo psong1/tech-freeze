@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
-import Auth from "../../utils/auth";
+import { auth } from "../../utils/auth";
 import "./Login.css";
-// import { Form } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Alert } from "react-bootstrap";
 
 const Login = () => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const navigate = useNavigate();
 
   const [login, { error }] = useMutation(LOGIN_USER);
 
@@ -41,7 +43,7 @@ const Login = () => {
       });
 
       console.log(data);
-      Auth.login(data.login.token);
+      auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
@@ -96,6 +98,7 @@ const Login = () => {
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
+          onClick={navigate}
         >
           Submit
         </Button>
