@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,9 +9,9 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import "./App.css";
 import LoginSignupContainer from "./Components/LoginSignupContainer/LoginSignupContainer";
-import logo from "./images/logo.png";
-import Main from "../src/Components/main/Main";
-import Sidebar from "../src/Components/sidebar/Sidebar";
+// import logo from "./images/logo.png";
+import Main from "./Components/main/Main";
+// import Sidebar from "./Components/Sidebar/Sidebar";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -34,13 +35,19 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        <LoginSignupContainer />
-        <img src={logo} alt="" />
-        <img src={require("./images/logo.png")} alt="" />
-        <Sidebar/>
-        <Main/>
-      </div>
+      <Router>
+        <>
+          <Routes>
+            <Route path="/" element={<LoginSignupContainer />} />
+
+            <Route path="/notes" element={<Main />} />
+            <Route
+              path="*"
+              element={<h1 className="display-2">Wrong page!</h1>}
+            />
+          </Routes>
+        </>
+      </Router>
     </ApolloProvider>
   );
 };
