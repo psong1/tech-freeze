@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 
-const NotePage = ({ activeNote, onUpdateNote }) => {
+const Main = ({ activeNote, onUpdateNote }) => {
   const onEditField = (field, value) => {
     onUpdateNote({
       ...activeNote,
@@ -12,7 +12,7 @@ const NotePage = ({ activeNote, onUpdateNote }) => {
   if (!activeNote) return <div className="no-active-note">No Active Note</div>;
 
   return (
-    <div className="app-note">
+    <div className="app-main">
       <div className="app-main-note-edit">
         <input
           type="text"
@@ -39,4 +39,4 @@ const NotePage = ({ activeNote, onUpdateNote }) => {
   );
 };
 
-export default NotePage;
+export default Main;

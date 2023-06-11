@@ -15,6 +15,10 @@ const Login = () => {
 
   const [login, { error }] = useMutation(LOGIN_USER);
 
+  const handleFormChange = () => {
+    navigate("/notes");
+  };
+
   useEffect(() => {
     if (error) {
       setShowAlert(true);
@@ -98,7 +102,7 @@ const Login = () => {
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
-          onClick={navigate}
+          onClick={handleFormChange}
         >
           Submit
         </Button>
