@@ -107,12 +107,12 @@ button:hover {
 }
 .app-main-note-edit,
 .app-main-note-preview {
-  height: 50vh;
+  height: 60vh;
 }
 
 .no-active-note {
   width: 70%;
-  height: 100vh;
+  height: 80vh;
   line-height: 100vh;
   text-align: center;
   font-size: 2rem;
