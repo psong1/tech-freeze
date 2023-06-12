@@ -18,6 +18,9 @@ Our project is a note taking app. You will be able to create a login and passwor
 
 Click the repository link below. Download the zip file and copy it to a directory of your choice or clone to a directory of your choice using your terminal. Open the file in VS Code then open the terminal and make sure you’re in the root directory 'TECH-FREEZE'. After installation is complete, run the following code: ‘node inex.js’ in the terminal. You’ll now be ready to run the app!
 
+Here is the like to our deployed application: [Tech Freeze Link](https://stormy-peak-28110.herokuapp.com/
+)
+
 [Repository](https://github.com/psong1/tech-freeze)
 
 ## Usage
