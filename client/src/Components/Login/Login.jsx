@@ -69,8 +69,10 @@ const Login = () => {
         >
           Something went wrong with your login credentials!
         </Alert>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="email">Email</Form.Label>
+        <Form.Group className="mb-3 email">
+          <Form.Label className="label" htmlFor="email">
+            Email
+          </Form.Label>
           <Form.Control
             type="text"
             placeholder="Your email"
@@ -84,8 +86,10 @@ const Login = () => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="password">Password</Form.Label>
+        <Form.Group className="mb-3 password">
+          <Form.Label className="label" htmlFor="password">
+            Password
+          </Form.Label>
           <Form.Control
             type="password"
             placeholder="Your password"
@@ -94,7 +98,7 @@ const Login = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback type="invalid" className="feedback">
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>

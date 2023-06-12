@@ -79,8 +79,11 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <img className="app-logo" src={logo} alt="" />
-      <img className="app-logo" src={require("./images/logo.png")} alt="" />
+      <>
+        <img className="app-logo" src={logo} alt="" />
+        <img className="app-logo" src={require("./images/logo.png")} alt="" />
+      </>
+
       <Router>
         <>
           <Routes>
@@ -90,12 +93,6 @@ const App = () => {
               path="/notes"
               element={
                 <div className="App">
-                  <img className="note-logo" src={logo} alt="" />
-                  <img
-                    className="note-logo"
-                    src={require("./images/logo.png")}
-                    alt=""
-                  />
                   <Sidebar
                     notes={notes}
                     onAddNote={onAddNote}

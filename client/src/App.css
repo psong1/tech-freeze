@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
 img {
   position: absolute;
-  top: 5px;
-  margin-left: 50%;
-  max-height: 230px;
-  margin-top: 5px;
+  top: 1%;
+  left: 40%;
+  max-height: 220px;
 }
 
 * {
@@ -16,6 +17,7 @@ img {
 
 * {
   box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
 }
 
 /* GLOBAL STYLES */
